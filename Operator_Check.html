@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var zaid= prompt(`Enter Any Operator`) // taking operators from user
+        z = parseInt(prompt(`Enter Any Number`));
+        a = parseInt(prompt(`Enter Any Number`));
+        if(zaid == "+")
+        {
+            document.writeln(`Welcome To Add <br>`);
+            i = z+a;
+            document.writeln(`the sum of ${z} + ${a} is ${i}`);
+        }
+        else if(zaid == "-")
+        {
+            document.writeln(`Welcome To Subtraction <br>`);
+            i = z-a;
+            document.writeln(`the sum of ${z} - ${a} = ${i}`);
+        }
+        else if(zaid == "*")
+        {
+            document.writeln(`Welcome To Multiplication <br>`);
+            i = z*a;
+            document.writeln(`the sum of ${z} * ${a} = ${i}`);
+        }
+        else if(zaid == "/")
+        {
+            document.writeln(`Welcome To Divide <br>`);
+            i = z/a;
+            document.writeln(`the sum of ${z} / ${a} = ${i}`);
+        }
+        else if(zaid == "%")
+        {
+            document.writeln(`Welcome To Modulus <br>`);
+            i = z%a;
+            document.writeln(`the sum of ${z} % ${a} = ${i}`);
+        }
+        else
+        {
+            document.write(`Invaid Operator`);
+        }
+        </script>
+</body>
+</html>
