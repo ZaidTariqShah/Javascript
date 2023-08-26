@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x = [9,6,4,3,12,8];
+        document.write(`Without Sorting the value of x is ${x}`);
+        temp = x[3];
+        x[3] = x[0];
+        x[0] = temp;    //3 6 4 9 12 8
+        temp = x[2];
+        x[2] = x[1];
+        x[1] = temp;    //3 4 6 9 12 8
+        temp = x[5];
+        x[5] = x[3];
+        x[3] = temp;    //3 4 6 8 12 9
+        temp = x[5];
+        x[5] = x[4];
+        x[4] = temp;    //3 4 6 8 9 12
+        document.write("<br>")
+        document.write(`After Sorting the value of x is ${x}`);
+
+    </script>
+</body>
+
+</html>
