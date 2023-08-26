@@ -1,2 +1,2 @@
 # Javascript
-A Boy WIth A Dream
+A Boy With A Dream
