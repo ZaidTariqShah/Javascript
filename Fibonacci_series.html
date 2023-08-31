@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Series</title>
+</head>
+
+<body>
+    <script>
+        let a = 0;
+        let b = 1;
+        document.write(a);
+        document.write(b);
+        for (let i = 0; i < 6; i++) {
+            let temp = a + b;
+            document.write(temp);
+            a = b;
+            b = temp;
+        }
+    </script>
+</body>
+</html>
