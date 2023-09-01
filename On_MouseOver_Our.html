@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mouseover</title>
+    <style>
+        #Card{
+            background-color: lightblue;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="Card" onmouseover="Me(this)" onmouseout="resetText(this)">Assalamualikum</div>
+    <script>
+        function Me(tariq){
+            tariq.innerHTML = "Walaikumassalam";
+            tariq.style.color = "blue";
+        }
+            function resetText(tariq) {
+                tariq.innerHTML = "Assalamualikum";
+                tariq.style.color = "black";
+            }
+    </script>
+</body>
+</html>
