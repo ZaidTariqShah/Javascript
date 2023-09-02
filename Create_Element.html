@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="Dropdown1">Dropdown Tag Name</label>
+    <select name="" id="Dropdown1" onchange="selecttag(this)">
+        <option value="" selected>----Options----</option>
+        <option value="div">Div Tag</option>
+        <option value="a">Anchor Tag </option>
+        <option value="p">Paragraph Tag</option>
+        <option value="h1">h1 Tag</option>
+        <option value="img">Image Tag</option>
+    </select>
+    <br>
+    <label for="Dropdown2">Dropdown innerHTML</label>
+    <select name="" id="Dropdown2" onchange="selectvalue(this)">
+        <option value="" selected>----Options----</option>
+        <option value="This Is A Div Tag">Div inner HTML</option>
+        <option value="This Is A anchor Tag">Anchor inner HTML </option>
+        <option value="This Is A Paragraph Tag">Paragraph inner HTML</option>
+        <option value="This Is A Heading">h1 inner HTML</option>
+        <option value="<img src='image.png' alt = 'image'>">Image inner Html</option>
+    </select>
+    <br>
+    <button type="button" onclick="btn()">Create Element</button>
+    <script type="text/javascript">
+        let element,value;
+        function selecttag(zaid){
+            element = zaid.value
+        }
+        function selectvalue(tariq){
+            value = tariq.value
+        }
+        function btn(){
+            x = document.createElement(element);
+            if(element == "img"){
+                let source = "image.png";
+                x.src = source;
+                x.alt = 'image';
+            } else {
+                x.innerHTML = value;
+            }
+            document.body.appendChild(x);
+        }
+    </script>
+</body>
+</html>
