@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = [1,2,3,4,5];
+        let num2 = num1.map((zaid) => {                 // 1 , 3 , 5
+            if(zaid % 2 != 0){
+                let store;
+                store = zaid * 2;                       // 2 , 6 , 10
+                return store;
+            }
+        }).map( (zaid)=> {
+            let store;
+            store = zaid * 3;                           // 6 , 18 , 30
+            return store;
+        }).map((zaid) => {
+            let store;
+            store = zaid * 4;                           // 24 , 72 , 120      
+            return store;
+        })
+        document.writeln(num2)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Geometry = {
+            length : 30,
+            breadth : 15,
+            height : 20,
+            base : 3,
+            Area_of_Rectangle  : function(){
+                return this.length * this.breadth;
+            },
+            Area_of_Cuboid : function(){
+                return this.length * this.breadth * this.height;
+            },
+            Area_of_Triangle : function(){
+                return (1/2) * this.base * this.height;  
+            },
+            Area_of_Square : function(){
+                return this.length * this.length;
+            }
+        }
+        document.writeln(`Area of Geometry is ${Geometry.Area_of_Rectangle()}`);
+        document.write("<br>");
+        document.write("<br>");
+        document.writeln(`Area of Cuboid is ${Geometry.Area_of_Cuboid()}`);
+        document.write("<br>");
+        document.write("<br>");
+        document.writeln(`Area of Triangle is ${Geometry.Area_of_Triangle()}`);
+        document.write("<br>");
+        document.write("<br>");
+        document.writeln(`Area of Square is ${Geometry.Area_of_Square()}`);
+
+    </script>
+</body>
+</html>
