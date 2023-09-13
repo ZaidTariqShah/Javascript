@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mouse</title>
+</head>
+<body>
+    <style>
+        #zaid{
+            background-color: lightskyblue;
+            font-size: 30px;
+            padding: 10px;
+        }
+    </style>
+    <div id="zaid" onmouseover="tariq(this)" onmouseout="hey(this)">خوش آمدید</div>
+    <script>
+        function tariq(shah){
+            shah.innerHTML = "أسلم عليكم و رحمتله و بركاته";
+            shah.style.color = "Maroon";
+        }
+        function hey(batte){
+            batte.innerHTML = "واليكم أسلم و رحمتله و بركاته";
+            batte.style.color = "Black" 
+        }
+    </script>
+</body>
+</html>
