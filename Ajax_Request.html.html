@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ajax</title>
+</head>
+<style> #Buttn {
+    background-color: #4c90af;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#Buttn:hover {
+    background-color: #070215;
+}
+</style>
+<body>
+    <button id="Buttn">Click Me</button>
+    <div id="div1"></div>
+    <script>
+        let b = document.getElementById('Buttn')
+        b.addEventListener('click', function () {
+            {
+                let xhr = new XMLHttpRequest();
+                link = `https://www.google.com/search?q=Facebook`
+                xhr.open("GET", link);
+                xhr.onload = () => {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        let ResponseTxt = xhr.responseText;
+                        let div = document.getElementById('div1');
+                        div.innerHTML = ResponseTxt;
+                    }
+                    else {
+                        div.innerHTML = "Error"
+                    }
+                }
+                xhr.send();
+            }
+        })
+    </script>
+</body>
+
+</html>
