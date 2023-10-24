@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project</title>
+</head>
+<body>
+    <input id="input" placeholder="Search Here" style="width: 21%; height: 20px;">
+    <div id="div"></div>
+    <button id="btn" onclick="searchh(this)">Search</button>
+    <div id="divv"></div>
+    <script>
+        let input = document.getElementById("input");
+        let div = document.getElementById("div");
+        let button = document.getElementById("btn");
+        div.appendChild(input);
+        div.style.textAlign = "center";
+        div.style.marginTop = "180px";
+        
+        document.body.style.backgroundImage = "url(https://i.pinimg.com/564x/62/2d/db/622ddb63987528970c3b7cb65bfc6c43.jpg)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundSize = "cover"; 
+        div.appendChild(button);
+        function searchh() {
+            let xhr = new XMLHttpRequest();
+            let link = `https://www.google.com/search?q=${input.value}`;
+            xhr.open('GET', link);
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let ResponseTxt = xhr.responseText;
+                    let div = document.getElementById('divv');
+                    div.innerHTML = ResponseTxt;
+                }
+                else {
+                    div.innerHTML = "Error";
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
