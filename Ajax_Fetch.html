@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="main">
+    <button onclick="ajaxPr()">Click
+    </button>
+    <script>
+      function ajaxPr()
+      {
+      let link = `https://www.google.com/search?q='Facebook'`;
+      fetch(link).
+      then((response) =>{
+        if(response.ok)
+        {
+          return response.text();
+        }
+      } ).
+      then(data => {
+        {
+        let div = document.createElement('div');
+     
+      {
+    
+        
+          let response = data;
+          div.innerHTML = response;
+        //  let bd = document.getElementById("main");
+          document.body.appendChild(div);
+        
+       
+      }
+    
+    }
+      })
+      
+  }
+    </script>
+</body>
+</html>
