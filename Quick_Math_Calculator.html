@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calculator</title>
+    <style>
+        input {
+            background-color: azure;
+            width: 20%;
+        }
+
+        button {
+            background-color: cornsilk;
+            font-size: medium;
+            width: 6.6%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <input type="text"><br>
+        <button class="cal" value="1">1</button>
+        <button class="cal" value="2">2</button>
+        <button class="cal" value="3">3</button><br>
+        <button class="cal" value="4">4</button>
+        <button class="cal" value="5">5</button>
+        <button class="cal" value="6">6</button><br>
+        <button class="cal" value="7">7</button>
+        <button class="cal" value="8">8</button>
+        <button class="cal" value="9">9</button><br>
+        <button class="cal" value="0">0</button>
+        <button class="cal" value="+">+</button>
+        <button class="cal" value="-">-</button><br>
+        <button class="cal" value="*">x</button>
+        <button class="cal" value="/">/</button>
+        <button id="equal" value="=">=</button>
+    </div>
+</body>
+<script>
+    let sum = "";
+    let val = document.getElementsByTagName("input")[0];
+    let btn = document.getElementsByClassName("cal");
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function (e) {
+            sum = sum + e.target.value;
+            val.value = sum;
+        });
+        debugger;
+        let equal = document.getElementById("equal");
+        equal.addEventListener("click", function (e) {
+            val.value = eval(sum);
+        });
+    }
+</script>
+</body>
+
+</html>
