@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Factorial</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("Enter a number"));
+        let flag = 1;
+        if(num != 0 ){
+                while(num != 0){
+            flag = num * flag;
+            num--;
+            }
+            document.write(`The Answer is ${flag}`);
+        }
+        else{
+            document.write(`Error try Again`)
+        }
+    </script>
+</body>
+</html>
