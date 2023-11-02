@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calculator</title>
+    <style>
+        button.cal:hover {
+            background-color: #ccc;
+        }
+
+        button#call:hover {
+            background-color: #218838;
+        }
+
+        button.operator:hover {
+            background-color: #0056b3;
+        }
+
+        button#clean:hover {
+            background-color: #dc3545;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        #div {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #content {
+            width: 200px;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #f3f3f3;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.cal {
+            font-weight: bold;
+        }
+
+        button#call {
+            background-color: #28a745;
+            color: white;
+        }
+
+        button.operator {
+            background-color: #007bff;
+            color: white;
+        }
+
+        button.operator:hover {
+            background-color: #0056b3;
+        }
+
+        button#call:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <div id="content"></div><br>
+        <button class="cal" value="1">1</button>
+        <button class="cal" value="2">2</button>
+        <button class="cal" value="3">3</button><br>
+        <button class="cal" value="4">4</button>
+        <button class="cal" value="5">5</button>
+        <button class="cal" value="6">6</button><br>
+        <button class="cal" value="7">7</button>
+        <button class="cal" value="8">8</button>
+        <button class="cal" value="9">9</button><br>
+        <button class="cal" value="0">0</button>
+        <button class="cal" value="+">+</button>
+        <button class="cal" value="-">-</button><br>
+        <button class="cal" value="*">x</button>
+        <button class="cal" value="/">/</button>
+        <button id="call" value="=">=</button>
+        <button id="clean" value="C">C</button>
+    </div>
+</body>
+<script>
+
+    let num1 = "";
+    let num2 = "";
+    let operator = "";
+    let box = document.getElementById("content");
+    let one = document.getElementsByClassName("cal")[0];
+    one.addEventListener("click", function (event) {
+
+        console.log(event);
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let two = document.getElementsByClassName("cal")[1];
+    two.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let three = document.getElementsByClassName("cal")[2];
+    three.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let four = document.getElementsByClassName("cal")[3];
+    four.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let five = document.getElementsByClassName("cal")[4];
+    five.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let six = document.getElementsByClassName("cal")[5];
+    six.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let seven = document.getElementsByClassName("cal")[6];
+    seven.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let eight = document.getElementsByClassName("cal")[7];
+    eight.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let nine = document.getElementsByClassName("cal")[8];
+    nine.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let zero = document.getElementsByClassName("cal")[9];
+    zero.addEventListener("click", function (event) {
+        let val = event.target.value;
+        numberWorld(val);
+    })
+
+    let clear = document.getElementById("clean");
+    clear.addEventListener("click", function (event) {
+        num1 = "";
+        num2 = "";
+        operator = "";
+        box.innerHTML = "";
+    })
+
+    
+    let add = document.getElementsByClassName('cal')[10];
+    add.addEventListener('click', function (event) {
+        let po = event.target.value;
+        box.innerHTML = po;
+        oppHandler(po);
+    })
+
+    let sub = document.getElementsByClassName("cal")[11];
+    sub.addEventListener("click", function (event) {
+        let po = event.target.value;
+        box.innerHTML = po;
+        oppHandler(po);
+    })
+
+    let mul = document.getElementsByClassName("cal")[12];
+    mul.addEventListener("click", function (event) {
+        let po = event.target.value;
+        box.innerHTML = po;
+        oppHandler(po);
+    })
+
+    let div = document.getElementsByClassName("cal")[13];
+    div.addEventListener("click", function (event) {
+        let po = event.target.value;
+        box.innerHTML = po;
+        oppHandler(po);
+    })
+    
+    function numberWorld(val) {
+        debugger;
+        if (operator == "") {
+            num1 = num1 + val;
+            box.innerHTML = num1;
+        } else {
+            num2 = num2 + val;
+            box.innerHTML = num2;
+        }
+        updateResult();
+    }
+    
+    function oppHandler(po) {
+        operator = po;
+        box.innerHTML = po;
+        updateEqual();
+    }
+    let result = "";
+    let equal = document.getElementById("call");
+    equal.addEventListener("click", function (event) {
+        updateEqual();
+    })
+    function updateEqual(){
+        debugger;
+        if (operator == "+" || operator == "-" || operator == "*" || operator == "/") {
+            result = eval(num1 + operator + num2);
+        }
+        if (num1 != "" && num2 != "") {
+            num1 = result;
+            num2 = "";
+            operator;
+        }
+        updateResult();
+    }
+    function updateResult() {
+        debugger;
+        box.innerHTML = (num1 + operator + num2);
+    }
+</script>
+</body>
+
+</html>
